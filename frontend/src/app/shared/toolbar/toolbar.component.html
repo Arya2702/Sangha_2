@@ -1,0 +1,24 @@
+<div fxLayout="row" fxLayoutAlign="top">
+    <mat-toolbar color="primary" style="background-color: rgb(67, 82, 178); 
+                                        box-shadow: none; 
+                                        position: fixed; 
+                                        z-index: 1000;">
+        <button mat-fab color="primary" style="height: 40px; width: 45px; margin-bottom: 0px" (click)="navigate()" matTooltip="Home">
+            <img src="assets/sangha_project.png" class="img-sizing">
+        </button>
+        <span class="division" > {{ title }} </span>
+        <span class="placing"></span>
+            <button mat-icon-button  *ngIf="iconVisible" [matMenuTriggerFor]="signout">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+            <button mat-raised-button *ngIf="iconVisible2" matTooltip="Click to login" (click)="redirect()"
+            style="border-radius: 20px;"> Login </button>
+            <mat-menu #signout>
+                <button mat-menu-item (click)="logout()"> Sign out </button>
+            </mat-menu>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</div>
+
+
+

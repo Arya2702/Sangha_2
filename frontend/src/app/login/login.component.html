@@ -1,0 +1,40 @@
+<!-- Shared toolbar -->
+
+<app-toolbar [iconVisible]="isIconVisible" [IconEnabled]="isIconEnabled" [iconVisible2]="isIconVisible"></app-toolbar>
+
+<!-- Define the resident login card that aids in resident login only -->
+
+<div fxLayoutAlign="space-around center" class="divisioncards">
+<mat-card class="cardsize" fxLayoutAlign="center center" fxLayout="column">
+    <mat-card-header>
+        <mat-card-title> Resident </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <img src="assets/resident icon.jpg" class="img-sizing">
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="residentlogin()" matTooltip="Click on login to register as a resident"> LOGIN </button>
+    </mat-card-actions>
+</mat-card>
+
+<!-- Image of the logo in the middle -->
+
+<button mat-fab disabled>
+    <img src="assets/sangha_project.png" style="width:210px; height: 210px">
+</button>
+
+<!-- Define the secretary login card that helps in login of the secretary only -->
+
+
+<mat-card class="cardsize" fxLayoutAlign="center center" fxLayout="column">
+    <mat-card-header>
+        <mat-card-title> Secretary </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <img src="assets/secretary icon.jpg" class="img-sizing2">
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="seclogin()"> LOGIN </button>
+    </mat-card-actions>
+</mat-card>
+</div>

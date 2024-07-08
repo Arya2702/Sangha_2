@@ -1,0 +1,18 @@
+.division
+{
+    padding: 2%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+}
+
+
+.placing
+{
+    flex: 1 1 auto;
+}
+
+.img-sizing{
+    height: 50px;
+    width: 50px;
+    margin-top:5px;
+}

@@ -1,0 +1,23 @@
+<!-- Shared toolbar -->
+
+<app-toolbar [IconEnabled]="isIconEnabled" [iconVisible2]="isIconVisible"></app-toolbar>
+
+<!-- Show recurringpay and nonrecurringpay cards -->
+
+<div fxLayout="row" fxLayoutAlign="space-around center" class="cards-div">
+    <mat-card class="card" matTooltip="Click to view details" (click)="redirect('recurringpay')">
+        <mat-card-content fxLayoutAlign="space-around center">
+            <mat-icon fxLayoutAlign="start"> person_outline </mat-icon>
+            <span style="font-size: 20px; font-weight: bold;"> Recurring payments </span>
+        </mat-card-content>
+    </mat-card>
+    </div>
+
+<div fxLayout="row" fxLayoutAlign="space-around center" class="cards-div">
+    <mat-card class="card" matTooltip="Click to view details" (click)="redirect('nonrecurringpay')">
+        <mat-card-content fxLayoutAlign="space-around center">
+            <mat-icon fxLayoutAlign="start"> person_outline </mat-icon>
+            <span style="font-size: 20px; font-weight: bold;"> Non-recurring payments </span>
+        </mat-card-content>
+    </mat-card>
+</div>

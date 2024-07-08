@@ -1,0 +1,14 @@
+.card{
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: rgba(57, 101, 13, 0.4) 0px 20px 50px 10px;
+}
+
+.form-field{
+    width: 300px;
+}
+
+.pad{
+    padding: 3%;
+    padding-top: 10%
+}
