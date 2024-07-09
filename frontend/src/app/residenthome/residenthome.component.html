@@ -1,0 +1,32 @@
+<!-- Shared toolbar -->
+
+<app-toolbar [IconEnabled]="isIconEnabled" [title]="title" [iconVisible2]="isIconVisible"></app-toolbar>
+
+<!-- Define the cards - complaint registration, viewing of complaint history, viewing update notice board -->
+
+<div fxLayout="row" fxLayoutAlign="space-around center" class="cards-div">
+<mat-card class="card" matTooltip="Click to view details" (click)="complaint('complaintreg')">
+    <mat-card-content fxLayoutAlign="space-around center" fxLayout="column" fxLayoutGap="15px">
+        <mat-icon fxLayoutAlign="start"> report_problem </mat-icon>
+        <span style="font-size: 20px; font-weight: bold;"> Complaint registration </span>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="card" matTooltip="Click to view details" (click)="complaint('viewcomplaints')">
+    <mat-card-content fxLayoutAlign="space-around center" fxLayout="column" fxLayoutGap="15px">
+        <mat-icon fxLayoutAlign="start"> report_problem </mat-icon>
+        <span style="font-size: 20px; font-weight: bold;"> View Complaints </span>
+    </mat-card-content>
+</mat-card>
+</div>
+
+<div fxLayout="column" fxLayoutAlign="space-around center" class="cards-div">
+
+<mat-card class="card" matTooltip="Click to view details" (click)="complaint('viewupdates')">
+    <mat-card-content fxLayoutAlign="space-around center" fxLayout="column" fxLayoutGap="20px">
+        <mat-icon fxLayoutAlign="start"> update </mat-icon>
+        <span style="font-size: 20px; font-weight: bold;"> View updates </span>
+    </mat-card-content>
+</mat-card>
+</div>
+

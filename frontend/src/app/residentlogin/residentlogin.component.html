@@ -1,0 +1,36 @@
+<!-- Shared toolbar -->
+
+<app-toolbar [iconVisible]="isIconVisible" [IconEnabled]="isIconEnabled" [title]="title" [iconVisible2]="isIconVisible"></app-toolbar>
+
+<!-- Getting email and password from the user, with a submit button -->
+
+<div fxLayout="row" fxLayoutAlign="space-around center" class="card">
+    <mat-card class="shadow" fxLayoutAlign="space-between center" fxLayout="column">
+        <mat-card-header fxLayoutAlign="center center">
+            <mat-card-title> {{ word }} Login </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="pad">
+            <form fxLayout="column" [formGroup]="form">
+            <mat-form-field appearance="outline">
+                <mat-label> Email </mat-label>
+                <input matInput type="email" required formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label> Password </mat-label>
+                <input matInput type="password" required formControlName="password">
+            </mat-form-field>
+        </form>
+        </mat-card-content>
+
+        <mat-card-actions class="pad">
+            <button mat-fab color="primary" (click)="login()"> 
+                <mat-icon>login</mat-icon>
+            </button>
+        </mat-card-actions>
+
+        <mat-card-actions *ngIf="isButtonVisible">
+            <button mat-stroked-button color="accent" matTooltip="Click to register" (click)="register()"> New resident registration </button>
+        </mat-card-actions>
+    </mat-card>
+
+</div>

@@ -1,0 +1,45 @@
+.card{
+    height: 500px;
+    background-color: rgb(67, 82, 178);
+    border-radius: 0px;
+}
+
+.button-oval{
+    border-radius: 20px;
+    width: 130px;
+    height: 40px;
+    font-size: 18px;
+    letter-spacing: 0px;
+    
+}
+
+.div-card{
+    padding:3%;
+    padding-left: 5.5%;
+    background-color: black;
+}
+.div-card2{
+    padding:5%;
+    padding-left: 26%;
+    background-color: black;
+}
+.card2{
+    width:350px;
+    height:300px;
+    border-radius: 20px;
+    border: 0.5px; 
+    background-color: black;
+}
+
+.card4{
+    width: 300px;
+    height: 270px;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.card3{
+    height: 130px;
+    background-color: rgb(67, 82, 178);
+    border-radius: 0px;
+}

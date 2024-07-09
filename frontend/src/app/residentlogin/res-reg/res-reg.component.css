@@ -1,0 +1,12 @@
+.card
+{
+    padding: 3%;
+    padding-top: 7.5%;
+}
+
+.card2
+{
+    height: 470px;
+    border-radius: 20px;
+    box-shadow: rgba(15, 95, 115, 0.4) 0px 15px 40px 10px;
+}

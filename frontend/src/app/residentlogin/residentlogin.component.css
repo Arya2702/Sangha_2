@@ -1,0 +1,15 @@
+.card
+{
+    padding: 10%;
+}
+
+.pad
+{
+    padding-top: 5%;
+}
+
+.shadow
+{
+    box-shadow: rgba(3, 106, 108, 0.2) 20px 30px 100px 10px;
+    border-radius: 20px;
+}

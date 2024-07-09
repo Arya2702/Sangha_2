@@ -1,0 +1,38 @@
+<!-- Shared toolbar -->
+
+<app-toolbar [IconEnabled]="isIconEnabled" [title]='title' [iconVisible2]="isIconVisible"></app-toolbar>
+
+<!-- Define cards to be displayed -->
+
+<div fxLayout="row" fxLayoutAlign="space-around center" class="cards-div">
+    <mat-card class="card" matTooltip="Click to view details" (click)="redirect('updates')">
+        <mat-card-content fxLayoutAlign="space-around center" fxLayout="column" fxLayoutGap="20px">
+            <mat-icon fxLayoutAlign="start" style="font-size: x-large;"> update </mat-icon>
+            <span style="font-size: 20px; font-weight: bold;"> Updates </span>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="card" matTooltip="Click to view details" (click)="redirect('buildingworkers')">
+        <mat-card-content fxLayoutAlign="space-around center" fxLayout="column" fxLayoutGap="20px">
+            <mat-icon fxLayoutAlign="start" style="font-size: x-large;"> person_outline </mat-icon>
+            <span style="font-size: 20px; font-weight: bold;"> Building workers </span>
+        </mat-card-content>
+    </mat-card>
+
+</div>
+
+<div fxLayout="row" fxLayoutAlign="space-around center" class="cards-div">
+    <mat-card class="card" matTooltip="Click to view details" (click)="redirect('residentdetails')">
+        <mat-card-content fxLayoutAlign="space-around center" fxLayout="column" fxLayoutGap="20px">
+            <mat-icon fxLayoutAlign="start" style="font-size: x-large;"> person </mat-icon>
+            <span style="font-size: 20px; font-weight: bold;"> Resident details </span>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="card" matTooltip="Click to view details" (click)="redirect('complaintdetails')">
+        <mat-card-content fxLayoutAlign="space-around center" fxLayout="column" fxLayoutGap="20px">
+            <mat-icon fxLayoutAlign="start"> report_problem </mat-icon>
+            <span style="font-size: 20px; font-weight: bold;"> Complaint details </span>
+        </mat-card-content>
+    </mat-card>
+</div>
