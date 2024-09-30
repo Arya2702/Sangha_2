@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators, FormGroup, Form } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpserviceService } from '../_services/httpservice.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -66,7 +66,7 @@ export class ResidentloginComponent implements OnInit {
     private _snackBar: MatSnackBar
     ){}
 
-  // Defining input decorators for the form to display the appropriate word  
+  // Defining input decorators for the form to display the appropriate word
 
   @Input() word: string = 'Resident';
   @Input() reRoute: string = 'residenthome';
@@ -80,17 +80,18 @@ export class ResidentloginComponent implements OnInit {
   // Verify login using the data in the database
 
   async login(){
-    let param: any = {
+    const param: any = {
       email: this.form.value.email,
       password: this.form.value.password
     };
     try{
-    let result = await this.http.login(param);
+    const result = await this.http.login(param);
     if (result?.success){
       this.navigateToDest();
     }
   }
-    catch{
+    catch(e){
+      console.log(e);
       this.openSnackBar('Invalid Email ID or password!', 'Okay');
     }
 

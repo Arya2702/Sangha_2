@@ -69,3 +69,7 @@ CREATE TABLE updates (
     update VARCHAR(255),
     PRIMARY KEY (id)
 );
+
+insert into resreg(firstname, lastname, typeofres, yearofmovingin, houseno, email, password) values(
+    'arya', 'nagarajan', 'owner', 2010, '22', 'arya.nagoji@gmail.com', '1234567890'
+);

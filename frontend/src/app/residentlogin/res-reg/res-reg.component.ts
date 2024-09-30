@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { HttpserviceService } from 'src/app/_services/httpservice.service';
@@ -15,7 +15,7 @@ export class ResRegComponent{
 
   isIconVisible: boolean = false;
   isIconEnabled: boolean = false;
-  
+
   // Validate the form with specific conditions
 
   form = this.fb.group({
@@ -31,7 +31,7 @@ export class ResRegComponent{
 
     typeofres: new FormControl(null, Validators.compose([
       Validators.required,
-    ])), 
+    ])),
 
     yearofmovingin: new FormControl(null, Validators.compose([
       Validators.required,
@@ -57,7 +57,7 @@ export class ResRegComponent{
     ]))
     })
 
-  // Define the constructor variables  
+  // Define the constructor variables
 
   constructor(
     private _snackBar: MatSnackBar,
@@ -79,7 +79,7 @@ export class ResRegComponent{
       if (passwordValue === confirmPasswordValue) {
       confirmPasswordControl.setErrors(null);
       return true;
-      } 
+      }
       else {
       confirmPasswordControl.setErrors({ mismatch: true });
       return false;
@@ -124,7 +124,7 @@ export class ResRegComponent{
 
   async resreg(){
     if(this.matchPassword() && this.yearRange()){
-    let param = {
+    const param = {
       firstname: this.form.value.firstname,
       lastname: this.form.value.lastname,
       typeofres: this.form.value.typeofres,
@@ -136,12 +136,13 @@ export class ResRegComponent{
     console.log(param);
 
     try{
-    let result = await this.http.resreg(param);
+    const result = await this.http.resreg(param);
     if(result.success){
       this.openSnackBar("Registered!", "Okay");
     }
   }
-  catch{
+  catch(e){
+    console.log(e);
     this.openSnackBar2("This House Number or Email ID already exists!", 'Okay');
   }
 }
