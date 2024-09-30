@@ -1,3 +1,5 @@
 export const environment = {
-    domain: "http://localhost:3001"
+  production: true,
+  keyEncryptDecrypt: 'Ac88ac#4289cbc7841@ar$tgrdc$td^h',
+  domain: '',
 };
