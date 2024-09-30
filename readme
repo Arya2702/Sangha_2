@@ -1,0 +1,6 @@
+Open with GitHub Desktop, and save the project folder in the local machine
+Go to the folder of this project via CMD
+go to the frontend folder, and run 'npm i'
+similarly, go the server folder and run 'npm i'
+to run the frontend, use the command 'ng serve'
+to run the server, use the command 'nodemon index.ts'
