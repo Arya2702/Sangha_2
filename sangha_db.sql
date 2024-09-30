@@ -7,6 +7,14 @@ CREATE TABLE building_workers_nonrecur (
     work_done_date DATE
 );
 
+CREATE SEQUENCE building_workers_recur_id_seq
+START WITH 1
+INCREMENT BY 1
+NO MINVALUE
+NO MAXVALUE
+CACHE 1;
+
+
 CREATE TABLE building_workers_recur (
     name            VARCHAR(40),
     designation     VARCHAR(40),
@@ -17,6 +25,14 @@ CREATE TABLE building_workers_recur (
     id              INTEGER NOT NULL DEFAULT nextval('building_workers_recur_id_seq'),
     PRIMARY KEY (id)
 );
+
+CREATE SEQUENCE complaint_id_seq
+START WITH 1
+INCREMENT BY 1
+NO MINVALUE
+NO MAXVALUE
+CACHE 1;
+
 
 CREATE TABLE complaint (
     name            VARCHAR(40),
@@ -38,6 +54,14 @@ CREATE TABLE resreg (
     PRIMARY KEY (houseno),
     UNIQUE (email)
 );
+
+CREATE SEQUENCE updates_id_seq
+START WITH 1
+INCREMENT BY 1
+NO MINVALUE
+NO MAXVALUE
+CACHE 1;
+
 
 CREATE TABLE updates (
     id     INTEGER NOT NULL DEFAULT nextval('updates_id_seq'),
