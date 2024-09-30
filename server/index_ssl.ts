@@ -28,8 +28,6 @@ var options = {
 }
 
 
-app.options('*', cors());
-
 app.use(express.static(path.join(__dirname, '../../frontend/dist/browser')));
 
 mountRoutes(app);
