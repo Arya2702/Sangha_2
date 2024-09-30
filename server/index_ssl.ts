@@ -3,7 +3,7 @@ const cors = require('cors');
 import mountRoutes from './api';
 import path from 'path';
 
-var httpPort = process.env.sangha_httpPort;
+
 var https = require('https');
 
 const app = express();
@@ -13,6 +13,19 @@ app.use(express.json({limit:'100mb'}));
 app.use(cors({
     origin:['http://localhost:4200']
 }));
+
+const fs= require('fs');
+
+var key = fs.readFileSync(process.env.sangha_sslkey);
+var cert = fs.readFileSync(process.env.sangha_sslcert);
+var ca = fs.readFileSync(process.env.sangha_sslca);
+var options = {
+    key: key,
+    cert: cert,
+    ca: ca,
+    ciphers: ["ECDHE-RSA-AES256-GCM-SHA384:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA:HIGH:!AES128"].join(':')
+
+}
 
 
 app.options('*', cors());
@@ -58,12 +71,14 @@ app.use(function(req: any,res: any,next: any){
 	res.setHeader('X-Content-Type-Options', "nosniff");
 	res.setHeader('X-XSS-Protection', "1; mode=block");
     res.setHeader('Referrer-Policy', 'strict-origin');
-    
+
 	next();
 })
 
+var httpPort = process.env.sangha_httpsPort;
+
 try{
-    https.createServer(app).listen(httpPort, process.env.sangha_httpsip, () => console.log('Sangha portal Server listening on port '+httpPort+'!'));
+    https.createServer(options, app).listen(httpPort, process.env.sangha_httpsip, () => console.log('Sangha portal Server listening on port '+httpPort+'!'));
 }
 
 catch{
