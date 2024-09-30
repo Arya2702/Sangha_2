@@ -3,26 +3,26 @@ const cors = require('cors');
 import mountRoutes from './api';
 import path from 'path';
 
-var httpPort = 3001;
+var httpPort = process.env.sangha_httpPort;
+var https = require('https');
 
 const app = express();
 
-app.use(express.json({limit:'100mb'}))
+app.use(express.json({limit:'100mb'}));
+
 app.use(cors({
     origin:['http://localhost:4200']
-}))
-app.options('*', cors())
+}));
 
-app.use(express.static(path.join(__dirname, '../frontend/dist/browser')));
+
+app.options('*', cors());
+
+app.use(express.static(path.join(__dirname, '../../frontend/dist/browser')));
 
 mountRoutes(app);
-app.get('*', (req: any, res: any) => {
-    res.sendFile(path.join(__dirname, '../frontend/dist/browser/index.html'))
-});
 
-app.use(function applyXFrame(req: any, res: any, next: any) {
-    res.set('X-Frame-Options', 'SAMEORIGIN');
-    next();
+app.get('*', (req: any, res: any) => {
+    res.sendFile(path.join(__dirname, '../../frontend/dist/browser/index.html'))
 });
 
 app.use(function(req: any,res: any,next: any){
@@ -63,7 +63,7 @@ app.use(function(req: any,res: any,next: any){
 })
 
 try{
-    app.listen(httpPort, ()=>console.log("Node server listening on port" + httpPort + "!"));
+    https.createServer(app).listen(httpPort, process.env.sangha_httpsip, () => console.log('Sangha portal Server listening on port '+httpPort+'!'));
 }
 
 catch{
